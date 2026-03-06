@@ -71,7 +71,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
 
 <script>
 // --- EmailJS 初始化 ---
-emailjs.init('0lXSpk6E_Y9ySmxZo'); // 替换为你的 EmailJS 公钥
+emailjs.init('0lxspk6e_y9ysmxzo'); // 替换为你的 EmailJS 公钥
 
 // --- 页面导航 ---
 function gotoPage(pageId){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(pageId).classList.add('active');}
@@ -212,7 +212,23 @@ function initCharts(){
   new Chart(pieCtx,{type:"pie",data:{labels:["Red","Blue","Green"],datasets:[{data:[10,20,30],backgroundColor:["#ff00ff","#00c6ff","#ff00ff"]}]},options:{responsive:true}});
 }
 
-
+// --- Logo Particles ---
+function formLogoParticles(){
+  const pos = geometry.attributes.position.array;
+  const target = [];
+  for(let i=0;i<particleCount;i++){
+    target.push(Math.cos(i/particleCount*Math.PI*4)*40);
+    target.push((Math.random()-0.5)*10);
+    target.push(Math.sin(i/particleCount*Math.PI*4)*10);
+  }
+  setInterval(()=>{
+    for(let i=0;i<particleCount;i++){
+      pos[i*3]+=(target[i*3]-pos[i*3])*0.02;
+      pos[i*3+1]+=(target[i*3+1]-pos[i*3+1])*0.02;
+      pos[i*3+2]+=(target[i*3+2]-pos[i*3+2])*0.02;
+    }
+    geometry.attributes.position.needsUpdate=true;
+  },16);
 }
 </script>
 </body>
